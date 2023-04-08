@@ -7,6 +7,13 @@
     overflow: unset;
     height: 100vh;
   }
+  #header .brand-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    margin-bottom: -21px;
+    margin-left: -25px;
+    color: #000;
+  }
   #header .closemenu {
     color: #000;
     position: absolute;

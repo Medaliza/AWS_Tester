@@ -29,7 +29,7 @@ const LoginPage = () => {
                 <input type="text" name="username" placeholder="Name" />
                 <input type="email" name="email" placeholder="Email" />
                 <input type="password" name="password" placeholder="Password" />
-                <input type="confirm_password" name="confirm_password" placeholder="Confirm Password" />
+                <input type="password" name="confirm_password" placeholder="Confirm Password" />
                 </div>
                 <button type="submit">Sign Up</button>
             </form>

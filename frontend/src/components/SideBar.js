@@ -1,6 +1,6 @@
 
 //import useState hook to create menu collapse state
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 //import react pro sidebar components
 import {
@@ -13,14 +13,12 @@ import {
 } from "react-pro-sidebar";
 
 //import icons from react icons
-import { FaList, FaRegHeart,FaListAlt, FaHome, FaUserAlt } from "react-icons/fa";
-import { FiHome, FiLogOut,FiSearch,FiCrosshair,FiUser,FiTarget, FiArrowLeftCircle, FiArrowRightCircle,FiMenu } from "react-icons/fi";
-import { RiPencilLine } from "react-icons/ri";
-import { BiCog } from "react-icons/bi";
+import { FaListAlt, FaHome, FaUserAlt } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 import {MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import {AiFillSecurityScan} from "react-icons/ai";
 import logo from '../static/logo.png';
-
+import AuthContext from '../context/AuthContext'
 
 //import sidebar css from react-pro-sidebar module and our custom css 
 import "react-pro-sidebar/dist/css/styles.css";
@@ -28,7 +26,7 @@ import "./Sidebar.css";
 
 
     const Sidebar = () => {
-  
+    let { logoutUser} = useContext(AuthContext)
     //create initial menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false)
 
@@ -50,7 +48,7 @@ import "./Sidebar.css";
           <SidebarHeader>
           <div className="logotext">
             <img src={logo} alt="logo" className="sidelogo" />
-            {!menuCollapse && <span className="brand-name" >AWS_Tester</span>}
+            {!menuCollapse && <span className="brand-name" >AWS_TESTER</span>}
             
               {/* small and big change using menucollapse state */}
               {/* <img src={menuCollapse ? logo : "bigLogo" } alt="logo" className="sidelogo" /> */}
@@ -76,7 +74,7 @@ import "./Sidebar.css";
           </SidebarContent>
           <SidebarFooter>
             <Menu iconShape="square">
-              <MenuItem icon={<FiLogOut style={{ fontSize: '2rem' }}/>}>Logout</MenuItem>
+              <MenuItem onClick={logoutUser} icon={<FiLogOut  style={{ fontSize: '2rem' }}/>}>Logout</MenuItem>
             </Menu>
           </SidebarFooter>
         </ProSidebar>

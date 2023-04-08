@@ -1,0 +1,86 @@
+{
+    "AWSLambdaBasicExecutionRole-5d69534e-73b9-4661-a2d9-6fe6e0ffd3fc": {
+        "PolicyName": "AWSLambdaBasicExecutionRole-5d69534e-73b9-4661-a2d9-6fe6e0ffd3fc",
+        "PolicyId": "ANPAYTMHYMXDX6G2D3SBD",
+        "Arn": "arn:aws:iam::591379588551:policy/service-role/AWSLambdaBasicExecutionRole-5d69534e-73b9-4661-a2d9-6fe6e0ffd3fc",
+        "Path": "/service-role/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 1,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2023-04-07 13:35:24+00:00",
+        "UpdateDate": "2023-04-07 13:35:24+00:00"
+    },
+    "cg-chris-policy-lambda_privesc_cgid998z0c56qw": {
+        "PolicyName": "cg-chris-policy-lambda_privesc_cgid998z0c56qw",
+        "PolicyId": "ANPAYTMHYMXDVARQUDB4J",
+        "Arn": "arn:aws:iam::591379588551:policy/cg-chris-policy-lambda_privesc_cgid998z0c56qw",
+        "Path": "/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 1,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2023-04-04 11:39:35+00:00",
+        "UpdateDate": "2023-04-04 11:39:35+00:00"
+    },
+    "cg-lambdaManager-policy-lambda_privesc_cgid998z0c56qw": {
+        "PolicyName": "cg-lambdaManager-policy-lambda_privesc_cgid998z0c56qw",
+        "PolicyId": "ANPAYTMHYMXD2UY543NB3",
+        "Arn": "arn:aws:iam::591379588551:policy/cg-lambdaManager-policy-lambda_privesc_cgid998z0c56qw",
+        "Path": "/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 1,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2023-04-04 11:39:35+00:00",
+        "UpdateDate": "2023-04-04 11:39:35+00:00"
+    },
+    "AmazonRDSServiceRolePolicy": {
+        "PolicyName": "AmazonRDSServiceRolePolicy",
+        "PolicyId": "ANPAIPEU5ZOBJWKWHUIBA",
+        "Arn": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy",
+        "Path": "/aws-service-role/",
+        "DefaultVersionId": "v12",
+        "AttachmentCount": 1,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2018-01-08 18:17:46+00:00",
+        "UpdateDate": "2022-12-13 16:24:27+00:00"
+    },
+    "AdministratorAccess": {
+        "PolicyName": "AdministratorAccess",
+        "PolicyId": "ANPAIWMBCKSKIEE64ZLYK",
+        "Arn": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "Path": "/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 1,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2015-02-06 18:39:46+00:00",
+        "UpdateDate": "2015-02-06 18:39:46+00:00"
+    },
+    "AWSSupportServiceRolePolicy": {
+        "PolicyName": "AWSSupportServiceRolePolicy",
+        "PolicyId": "ANPAJ7W6266ELXF5MISDS",
+        "Arn": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy",
+        "Path": "/aws-service-role/",
+        "DefaultVersionId": "v28",
+        "AttachmentCount": 1,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2018-04-19 18:04:44+00:00",
+        "UpdateDate": "2023-03-16 20:29:42+00:00"
+    },
+    "AWSTrustedAdvisorServiceRolePolicy": {
+        "PolicyName": "AWSTrustedAdvisorServiceRolePolicy",
+        "PolicyId": "ANPAJH4QJ2WMHBOB47BUE",
+        "Arn": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy",
+        "Path": "/aws-service-role/",
+        "DefaultVersionId": "v9",
+        "AttachmentCount": 1,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2018-02-22 21:24:25+00:00",
+        "UpdateDate": "2021-08-10 22:41:30+00:00"
+    }
+}

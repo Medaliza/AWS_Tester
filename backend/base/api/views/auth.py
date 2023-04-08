@@ -8,9 +8,6 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 
-from .serializers import NoteSerializer
-from base.models import Note
-
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -42,18 +39,14 @@ def register(request):
     username = request.data.get('username')
     email = request.data.get('email')
     password = request.data.get('password')
-    # confirm_password = request.POST['confirm_password']
-    # Check if passwords match
-    # if password == confirm_password:
-        # Create new user object
     user = User.objects.create_user(username, email, password)
     user.save()
     return Response('user registered successfully')
 
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def getNotes(request):
-    user = request.user
-    notes = user.note_set.all()
-    serializer = NoteSerializer(notes, many=True)
-    return Response(serializer.data)
+# @api_view(['GET'])
+# @permission_classes([IsAuthenticated])
+# def getNotes(request):
+#     user = request.user
+#     notes = user.note_set.all()
+#     serializer = NoteSerializer(notes, many=True)
+#     return Response(serializer.data)

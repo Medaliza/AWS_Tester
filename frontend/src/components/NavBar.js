@@ -10,7 +10,7 @@ import AuthContext from '../context/AuthContext'
 const Navigationbar = () => {
   let {user, logoutUser} = useContext(AuthContext)
   return (
-    <Navbar bg="light" expand="lg" className="custom-navbar">
+    <Navbar expand="lg" className="custom-navbar">
           
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

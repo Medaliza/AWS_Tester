@@ -23,6 +23,7 @@ import AuthContext from '../context/AuthContext'
 //import sidebar css from react-pro-sidebar module and our custom css 
 import "react-pro-sidebar/dist/css/styles.css";
 import "./Sidebar.css";
+import { Link, useHistory } from "react-router-dom";
 
 
     const Sidebar = () => {
@@ -36,9 +37,22 @@ import "./Sidebar.css";
         menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
 
      };
+    const history = useHistory();
     const handleClick = (menuItem) => {
         setActiveMenuItem(menuItem);
-      };
+        switch (menuItem) {
+          case "home":
+            history.push("/");
+            break;
+          case "scan":
+            history.push("/scan");
+            break;
+          case "history":
+            history.push("/history");
+            break;
+          default:
+            break;
+      }};
     const [activeMenuItem, setActiveMenuItem] = useState('home');
   return (
     <>
@@ -64,12 +78,17 @@ import "./Sidebar.css";
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
+
               <MenuItem active={activeMenuItem === 'home'} onClick={() => handleClick('home')} icon={<FaHome style={{ fontSize: '2rem' }}/>}>
                 Home
               </MenuItem>
+
               <MenuItem active={activeMenuItem === 'scan'} onClick={() => handleClick('scan')} icon={<AiFillSecurityScan style={{ fontSize: '2rem' }}/>} >Scan</MenuItem>
-              <MenuItem active={activeMenuItem === 'results'} onClick={() => handleClick('results')} icon={<FaListAlt style={{ fontSize: '2rem' }}/>}>Results</MenuItem>
-              <MenuItem active={activeMenuItem === 'profile'} onClick={() => handleClick('profile')} icon={<FaUserAlt style={{ fontSize: '2rem' }}/>}>Profile</MenuItem>
+              
+
+
+              <MenuItem active={activeMenuItem === 'history'} onClick={() => handleClick('history')} icon={<FaListAlt  style={{ fontSize: '2rem' }}/>}>History</MenuItem>
+
             </Menu>
           </SidebarContent>
           <SidebarFooter>

@@ -3,10 +3,9 @@ import botocore
 import json
 import sys
 from celery import shared_task
-
 import os
 from django.conf import settings
-from base.models import Policy
+
 @shared_task
 def iam_list_policies_attached(AWS_ACCESS_KEY_ID, region):
     '''
@@ -14,6 +13,7 @@ def iam_list_policies_attached(AWS_ACCESS_KEY_ID, region):
     adds the OnlyAttached=True flag
     '''
     output = {}
+    print(os.getcwd())
     print("### Printing IAM Policies ###")
     try:
         client = boto3.client('iam', region_name=region)
@@ -31,9 +31,7 @@ def iam_list_policies_attached(AWS_ACCESS_KEY_ID, region):
             print(path)
             with open(path, 'w') as f:
                 json.dump(output, f, default=str, indent=4)
-            # Save the file path to the database
-            policy = Policy(file_path=path)
-            policy.save()
+                return path # return the path as a string
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == 'InvalidClientTokenId':
             sys.exit("{} : The AWS KEY IS INVALID. Exiting".format(AWS_ACCESS_KEY_ID))
@@ -47,4 +45,4 @@ def iam_list_policies_attached(AWS_ACCESS_KEY_ID, region):
             print("Unexpected error: {}".format(e))
     except KeyboardInterrupt:
         print("CTRL-C received, exiting...")
-    return path
+

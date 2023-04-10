@@ -1,7 +1,8 @@
 #header {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 220px;
+    z-index: 9999;
   }
   #header .pro-sidebar {
     overflow: unset;

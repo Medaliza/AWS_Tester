@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomePage from './pages/HomePage/HomePage'
 import LoginPage from './pages/Login/LoginPage'
+import HistoryPage from './pages/HistoryPage/HistoryPage';
 import Navbar from './components/NavBar';
 import Sidebar from './components/SideBar';
 import ScanPage from './pages/ScanPage/ScanPage'
@@ -22,6 +23,7 @@ function App() {
         <Sidebar/>
           <PrivateRoute component={HomePage} path="/" exact/>
           <PrivateRoute component={ResultsPage} path="/results" exact/>
+          <PrivateRoute component={HistoryPage} path="/history" exact/>
           <PrivateRoute component={ScanPage} path="/scan"/>
           <Route component={LoginPage} path="/login"/>
         </AuthProvider>

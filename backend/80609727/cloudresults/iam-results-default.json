@@ -1,0 +1,543 @@
+{
+    "groups": {},
+    "users": {
+        "AIDAYTMHYMXDRDROP4I5T": {
+            "arn": "arn:aws:iam::591379588551:user/cg-bilbo-vulnerable_lambda_cgidn9shu2g3id",
+            "create_date": "2023-04-04 14:31:37+00:00",
+            "id": "AIDAYTMHYMXDRDROP4I5T",
+            "name": "cg-bilbo-vulnerable_lambda_cgidn9shu2g3id",
+            "inline_policies": {
+                "41d7bcd9ad9057ed09528d58605da7d9400fe00ef55e4b64e5b89ca8218b31e3": "cg-bilbo-vulnerable_lambda_cgidn9shu2g3id-standard-user-assumer"
+            },
+            "groups": {},
+            "path": "/",
+            "customer_managed_policies": {},
+            "aws_managed_policies": {},
+            "is_excluded": false
+        },
+        "AIDAYTMHYMXDQQ5LEPXCW": {
+            "arn": "arn:aws:iam::591379588551:user/chris-lambda_privesc_cgid998z0c56qw",
+            "create_date": "2023-04-04 11:39:35+00:00",
+            "id": "AIDAYTMHYMXDQQ5LEPXCW",
+            "name": "chris-lambda_privesc_cgid998z0c56qw",
+            "inline_policies": {},
+            "groups": {},
+            "path": "/",
+            "customer_managed_policies": {
+                "ANPAYTMHYMXDVARQUDB4J": "cg-chris-policy-lambda_privesc_cgid998z0c56qw"
+            },
+            "aws_managed_policies": {},
+            "is_excluded": false
+        }
+    },
+    "roles": {
+        "AROAYTMHYMXDUJWSAF2LX": {
+            "arn": "arn:aws:iam::591379588551:role/cg-debug-role-lambda_privesc_cgid998z0c56qw",
+            "assume_role_policy": {
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                            },
+                            "Action": "sts:AssumeRole"
+                        }
+                    ]
+                }
+            },
+            "create_date": "2023-04-04 11:39:36+00:00",
+            "role_last_used": null,
+            "id": "AROAYTMHYMXDUJWSAF2LX",
+            "name": "cg-debug-role-lambda_privesc_cgid998z0c56qw",
+            "inline_policies": {},
+            "instance_profiles": [],
+            "instances_count": 0,
+            "path": "/",
+            "customer_managed_policies": {},
+            "aws_managed_policies": {},
+            "is_excluded": false
+        },
+        "AROAYTMHYMXDR3E4ME6B6": {
+            "arn": "arn:aws:iam::591379588551:role/cg-lambda-invoker-vulnerable_lambda_cgidn9shu2g3id",
+            "assume_role_policy": {
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": "arn:aws:iam::591379588551:user/cg-bilbo-vulnerable_lambda_cgidn9shu2g3id"
+                            },
+                            "Action": "sts:AssumeRole"
+                        }
+                    ]
+                }
+            },
+            "create_date": "2023-04-04 14:31:59+00:00",
+            "role_last_used": null,
+            "id": "AROAYTMHYMXDR3E4ME6B6",
+            "name": "cg-lambda-invoker-vulnerable_lambda_cgidn9shu2g3id",
+            "inline_policies": {
+                "68d15ac10b4f47a2be88ff9c5ec58a62ca7062db0bac77a033a88cac91ed1774": "lambda-invoker"
+            },
+            "instance_profiles": [],
+            "instances_count": 0,
+            "path": "/",
+            "customer_managed_policies": {},
+            "aws_managed_policies": {},
+            "is_excluded": false
+        },
+        "AROAYTMHYMXDQ43CPTUGS": {
+            "arn": "arn:aws:iam::591379588551:role/cg-lambdaManager-role-lambda_privesc_cgid998z0c56qw",
+            "assume_role_policy": {
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": "arn:aws:iam::591379588551:user/chris-lambda_privesc_cgid998z0c56qw"
+                            },
+                            "Action": "sts:AssumeRole"
+                        }
+                    ]
+                }
+            },
+            "create_date": "2023-04-04 11:39:44+00:00",
+            "role_last_used": null,
+            "id": "AROAYTMHYMXDQ43CPTUGS",
+            "name": "cg-lambdaManager-role-lambda_privesc_cgid998z0c56qw",
+            "inline_policies": {},
+            "instance_profiles": [],
+            "instances_count": 0,
+            "path": "/",
+            "customer_managed_policies": {
+                "ANPAYTMHYMXD2UY543NB3": "cg-lambdaManager-policy-lambda_privesc_cgid998z0c56qw"
+            },
+            "aws_managed_policies": {},
+            "is_excluded": false
+        },
+        "AROAYTMHYMXDVN3WIDL5E": {
+            "arn": "arn:aws:iam::591379588551:role/service-role/myfnction-role-lfa0eni0",
+            "assume_role_policy": {
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                            },
+                            "Action": "sts:AssumeRole"
+                        }
+                    ]
+                }
+            },
+            "create_date": "2023-04-07 13:35:24+00:00",
+            "role_last_used": null,
+            "id": "AROAYTMHYMXDVN3WIDL5E",
+            "name": "myfnction-role-lfa0eni0",
+            "inline_policies": {},
+            "instance_profiles": [],
+            "instances_count": 0,
+            "path": "/service-role/",
+            "customer_managed_policies": {},
+            "aws_managed_policies": {},
+            "is_excluded": false
+        },
+        "AROAYTMHYMXDZLHQ3SL2T": {
+            "arn": "arn:aws:iam::591379588551:role/vulnerable_lambda_cgidn9shu2g3id-policy_applier_lambda1",
+            "assume_role_policy": {
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "",
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                            },
+                            "Action": "sts:AssumeRole"
+                        }
+                    ]
+                }
+            },
+            "create_date": "2023-04-04 14:31:38+00:00",
+            "role_last_used": null,
+            "id": "AROAYTMHYMXDZLHQ3SL2T",
+            "name": "vulnerable_lambda_cgidn9shu2g3id-policy_applier_lambda1",
+            "inline_policies": {
+                "aa6d2a97fcd8141f2b7b5de6488ae09d2662280e307b454e7740e44792b7a9c4": "policy_applier_lambda1"
+            },
+            "instance_profiles": [],
+            "instances_count": 0,
+            "path": "/",
+            "customer_managed_policies": {},
+            "aws_managed_policies": {},
+            "is_excluded": false
+        }
+    },
+    "aws_managed_policies": {},
+    "customer_managed_policies": {
+        "ANPAYTMHYMXD2UY543NB3": {
+            "PolicyName": "cg-lambdaManager-policy-lambda_privesc_cgid998z0c56qw",
+            "PolicyId": "ANPAYTMHYMXD2UY543NB3",
+            "Arn": "arn:aws:iam::591379588551:policy/cg-lambdaManager-policy-lambda_privesc_cgid998z0c56qw",
+            "Path": "/",
+            "DefaultVersionId": "v1",
+            "AttachmentCount": 1,
+            "IsAttachable": true,
+            "CreateDate": "2023-04-04 11:39:35+00:00",
+            "UpdateDate": "2023-04-04 11:39:35+00:00",
+            "PolicyVersionList": [
+                {
+                    "Document": {
+                        "Statement": [
+                            {
+                                "Action": [
+                                    "lambda:*",
+                                    "iam:PassRole"
+                                ],
+                                "Effect": "Allow",
+                                "Resource": "*",
+                                "Sid": "lambdaManager"
+                            }
+                        ],
+                        "Version": "2012-10-17"
+                    },
+                    "VersionId": "v1",
+                    "IsDefaultVersion": true,
+                    "CreateDate": "2023-04-04 11:39:35+00:00"
+                }
+            ],
+            "PrivilegeEscalation": [
+                {
+                    "type": "PassExistingRoleToNewLambdaThenInvoke",
+                    "actions": [
+                        "iam:passrole",
+                        "lambda:createfunction",
+                        "lambda:invokefunction"
+                    ]
+                },
+                {
+                    "type": "PassExistingRoleToNewLambdaThenTriggerWithExistingDynamo",
+                    "actions": [
+                        "iam:passrole",
+                        "lambda:createfunction",
+                        "lambda:createeventsourcemapping"
+                    ]
+                },
+                {
+                    "type": "EditExistingLambdaFunctionWithRole",
+                    "actions": [
+                        "lambda:updatefunctioncode"
+                    ]
+                }
+            ],
+            "DataExfiltration": [],
+            "ResourceExposure": [
+                "iam:PassRole",
+                "lambda:AddLayerVersionPermission",
+                "lambda:AddPermission",
+                "lambda:DisableReplication",
+                "lambda:EnableReplication",
+                "lambda:RemoveLayerVersionPermission",
+                "lambda:RemovePermission"
+            ],
+            "ServiceWildcard": [
+                "lambda"
+            ],
+            "CredentialsExposure": [],
+            "InfrastructureModification": [
+                "iam:PassRole",
+                "lambda:AddLayerVersionPermission",
+                "lambda:AddPermission",
+                "lambda:CreateAlias",
+                "lambda:CreateFunction",
+                "lambda:CreateFunctionUrlConfig",
+                "lambda:DeleteAlias",
+                "lambda:DeleteCodeSigningConfig",
+                "lambda:DeleteEventSourceMapping",
+                "lambda:DeleteFunction",
+                "lambda:DeleteFunctionCodeSigningConfig",
+                "lambda:DeleteFunctionConcurrency",
+                "lambda:DeleteFunctionEventInvokeConfig",
+                "lambda:DeleteFunctionUrlConfig",
+                "lambda:DeleteLayerVersion",
+                "lambda:DeleteProvisionedConcurrencyConfig",
+                "lambda:DisableReplication",
+                "lambda:EnableReplication",
+                "lambda:InvokeAsync",
+                "lambda:InvokeFunction",
+                "lambda:InvokeFunctionUrl",
+                "lambda:PublishLayerVersion",
+                "lambda:PublishVersion",
+                "lambda:PutFunctionCodeSigningConfig",
+                "lambda:PutFunctionConcurrency",
+                "lambda:PutFunctionEventInvokeConfig",
+                "lambda:PutProvisionedConcurrencyConfig",
+                "lambda:RemoveLayerVersionPermission",
+                "lambda:RemovePermission",
+                "lambda:TagResource",
+                "lambda:UntagResource",
+                "lambda:UpdateAlias",
+                "lambda:UpdateCodeSigningConfig",
+                "lambda:UpdateEventSourceMapping",
+                "lambda:UpdateFunctionCode",
+                "lambda:UpdateFunctionCodeSigningConfig",
+                "lambda:UpdateFunctionConfiguration",
+                "lambda:UpdateFunctionEventInvokeConfig",
+                "lambda:UpdateFunctionUrlConfig"
+            ],
+            "is_excluded": false
+        },
+        "ANPAYTMHYMXDVARQUDB4J": {
+            "PolicyName": "cg-chris-policy-lambda_privesc_cgid998z0c56qw",
+            "PolicyId": "ANPAYTMHYMXDVARQUDB4J",
+            "Arn": "arn:aws:iam::591379588551:policy/cg-chris-policy-lambda_privesc_cgid998z0c56qw",
+            "Path": "/",
+            "DefaultVersionId": "v1",
+            "AttachmentCount": 1,
+            "IsAttachable": true,
+            "CreateDate": "2023-04-04 11:39:35+00:00",
+            "UpdateDate": "2023-04-04 11:39:35+00:00",
+            "PolicyVersionList": [
+                {
+                    "Document": {
+                        "Statement": [
+                            {
+                                "Action": [
+                                    "sts:AssumeRole",
+                                    "iam:List*",
+                                    "iam:Get*"
+                                ],
+                                "Effect": "Allow",
+                                "Resource": "*",
+                                "Sid": "chris"
+                            }
+                        ],
+                        "Version": "2012-10-17"
+                    },
+                    "VersionId": "v1",
+                    "IsDefaultVersion": true,
+                    "CreateDate": "2023-04-04 11:39:35+00:00"
+                }
+            ],
+            "PrivilegeEscalation": [],
+            "DataExfiltration": [],
+            "ResourceExposure": [],
+            "ServiceWildcard": [],
+            "CredentialsExposure": [
+                "sts:AssumeRole"
+            ],
+            "InfrastructureModification": [
+                "sts:AssumeRole"
+            ],
+            "is_excluded": false
+        }
+    },
+    "inline_policies": {
+        "68d15ac10b4f47a2be88ff9c5ec58a62ca7062db0bac77a033a88cac91ed1774": {
+            "PolicyName": "lambda-invoker",
+            "PolicyId": "68d15ac10b4f47a2be88ff9c5ec58a62ca7062db0bac77a033a88cac91ed1774",
+            "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Action": [
+                            "lambda:ListFunctionEventInvokeConfigs",
+                            "lambda:InvokeFunction",
+                            "lambda:ListTags",
+                            "lambda:GetFunction",
+                            "lambda:GetPolicy"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": [
+                            "arn:aws:lambda:us-east-1:591379588551:function:vulnerable_lambda_cgidn9shu2g3id-policy_applier_lambda1",
+                            "arn:aws:lambda:us-east-1:591379588551:function:vulnerable_lambda_cgidn9shu2g3id-policy_applier_lambda1"
+                        ]
+                    },
+                    {
+                        "Action": [
+                            "lambda:ListFunctions",
+                            "iam:Get*",
+                            "iam:List*",
+                            "iam:SimulateCustomPolicy",
+                            "iam:SimulatePrincipalPolicy"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": "*"
+                    }
+                ]
+            },
+            "PrivilegeEscalation": [],
+            "DataExfiltration": [],
+            "ResourceExposure": [],
+            "ServiceWildcard": [],
+            "CredentialsExposure": [],
+            "InfrastructureModification": [],
+            "is_excluded": false
+        },
+        "aa6d2a97fcd8141f2b7b5de6488ae09d2662280e307b454e7740e44792b7a9c4": {
+            "PolicyName": "policy_applier_lambda1",
+            "PolicyId": "aa6d2a97fcd8141f2b7b5de6488ae09d2662280e307b454e7740e44792b7a9c4",
+            "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Action": "iam:AttachUserPolicy",
+                        "Effect": "Allow",
+                        "Resource": "arn:aws:iam::591379588551:user/cg-bilbo-vulnerable_lambda_cgidn9shu2g3id"
+                    },
+                    {
+                        "Action": "s3:GetObject",
+                        "Effect": "Allow",
+                        "Resource": "*"
+                    },
+                    {
+                        "Action": "logs:CreateLogGroup",
+                        "Effect": "Allow",
+                        "Resource": "arn:aws:logs:*:*:*"
+                    },
+                    {
+                        "Action": [
+                            "logs:CreateLogStream",
+                            "logs:PutLogEvents"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": [
+                            "arn:aws:logs:*:*:log-group:*:*"
+                        ]
+                    }
+                ]
+            },
+            "PrivilegeEscalation": [],
+            "DataExfiltration": [
+                "s3:GetObject"
+            ],
+            "ResourceExposure": [],
+            "ServiceWildcard": [],
+            "CredentialsExposure": [],
+            "InfrastructureModification": [
+                "s3:GetObject"
+            ],
+            "is_excluded": false
+        },
+        "41d7bcd9ad9057ed09528d58605da7d9400fe00ef55e4b64e5b89ca8218b31e3": {
+            "PolicyName": "cg-bilbo-vulnerable_lambda_cgidn9shu2g3id-standard-user-assumer",
+            "PolicyId": "41d7bcd9ad9057ed09528d58605da7d9400fe00ef55e4b64e5b89ca8218b31e3",
+            "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Action": "sts:AssumeRole",
+                        "Effect": "Allow",
+                        "Resource": "arn:aws:iam::940877411605:role/cg-lambda-invoker*",
+                        "Sid": ""
+                    },
+                    {
+                        "Action": [
+                            "iam:Get*",
+                            "iam:List*",
+                            "iam:SimulateCustomPolicy",
+                            "iam:SimulatePrincipalPolicy"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": "*",
+                        "Sid": ""
+                    }
+                ]
+            },
+            "PrivilegeEscalation": [],
+            "DataExfiltration": [],
+            "ResourceExposure": [],
+            "ServiceWildcard": [],
+            "CredentialsExposure": [],
+            "InfrastructureModification": [],
+            "is_excluded": false
+        }
+    },
+    "exclusions": {
+        "policies": [
+            "AWSServiceRoleFor*",
+            "*ServiceRolePolicy",
+            "*ServiceLinkedRolePolicy",
+            "AdministratorAccess",
+            "service-role*",
+            "aws-service-role*",
+            "/service-role*",
+            "/aws-service-role*",
+            "MyRole"
+        ],
+        "roles": [
+            "service-role*",
+            "aws-service-role*"
+        ],
+        "users": [
+            ""
+        ],
+        "groups": [
+            ""
+        ],
+        "include-actions": [
+            "s3:GetObject",
+            "ssm:GetParameter",
+            "ssm:GetParameters",
+            "ssm:GetParametersByPath",
+            "secretsmanager:GetSecretValue",
+            "rds:CopyDBSnapshot",
+            "rds:CreateDBSnapshot"
+        ],
+        "exclude-actions": [
+            ""
+        ]
+    },
+    "links": {
+        "lambda:DeleteFunctionCodeSigningConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionCodeSigningConfig.html",
+        "lambda:DisableReplication": null,
+        "lambda:UpdateFunctionUrlConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionUrlConfig.html",
+        "s3:GetObject": "https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html",
+        "lambda:PutProvisionedConcurrencyConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutProvisionedConcurrencyConfig.html",
+        "lambda:UpdateFunctionCode": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html",
+        "lambda:DeleteFunction": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html",
+        "lambda:DeleteEventSourceMapping": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html",
+        "lambda:UpdateCodeSigningConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateCodeSigningConfig.html",
+        "lambda:UpdateFunctionConfiguration": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html",
+        "lambda:PutFunctionConcurrency": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionConcurrency.html",
+        "lambda:DeleteCodeSigningConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteCodeSigningConfig.html",
+        "lambda:UpdateEventSourceMapping": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html",
+        "lambda:CreateFunction": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html",
+        "lambda:PutFunctionEventInvokeConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionEventInvokeConfig.html",
+        "lambda:DeleteAlias": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteAlias.html",
+        "lambda:RemoveLayerVersionPermission": "https://docs.aws.amazon.com/lambda/latest/dg/API_RemoveLayerVersionPermission.html",
+        "sts:AssumeRole": "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html",
+        "lambda:DeleteFunctionUrlConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionUrlConfig.html",
+        "lambda:DeleteLayerVersion": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteLayerVersion.html",
+        "lambda:CreateAlias": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateAlias.html",
+        "lambda:InvokeFunction": "https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html",
+        "iam:PassRole": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html",
+        "lambda:EnableReplication": null,
+        "lambda:UntagResource": "https://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html",
+        "lambda:AddPermission": "https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html",
+        "lambda:DeleteFunctionEventInvokeConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionEventInvokeConfig.html",
+        "lambda:PublishLayerVersion": "https://docs.aws.amazon.com/lambda/latest/dg/API_PublishLayerVersion.html",
+        "lambda:UpdateAlias": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateAlias.html",
+        "lambda:UpdateFunctionEventInvokeConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionEventInvokeConfig.html",
+        "lambda:PutFunctionCodeSigningConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionCodeSigningConfig.html",
+        "lambda:InvokeAsync": "https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html",
+        "lambda:DeleteProvisionedConcurrencyConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteProvisionedConcurrencyConfig.html",
+        "lambda:AddLayerVersionPermission": "https://docs.aws.amazon.com/lambda/latest/dg/API_AddLayerVersionPermission.html",
+        "lambda:DeleteFunctionConcurrency": "https://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionConcurrency.html",
+        "lambda:RemovePermission": "https://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html",
+        "lambda:InvokeFunctionUrl": "https://docs.aws.amazon.com/lambda/latest/dg/API_InvokeFunctionUrl.html",
+        "lambda:UpdateFunctionCodeSigningConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCodeSigningConfig.html",
+        "lambda:TagResource": "https://docs.aws.amazon.com/lambda/latest/dg/API_TagResources.html",
+        "lambda:PublishVersion": "https://docs.aws.amazon.com/lambda/latest/dg/API_PublishVersion.html",
+        "lambda:CreateFunctionUrlConfig": "https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunctionUrlConfig.html"
+    }
+}

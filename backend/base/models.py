@@ -1,6 +1,6 @@
 from django.db import models
 
-class Policy(models.Model):
+class Results(models.Model):
     profile_name= models.CharField(max_length=200, default='')
     AWS_ACCESS_KEY_ID = models.CharField(max_length=200, default='')
     cloud_path = models.CharField(max_length=200, default='')

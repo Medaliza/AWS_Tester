@@ -34,10 +34,11 @@ const ScanPage = () => {
     setLoading(false); // set loading back to false after getting the result
   };
 
-  const handleShowResults = () => {
-    // navigate to the results page
-    history.push('/results', { result });
+  const handleShowResults = (caseId) => () => {
+    history.push(`/results/${caseId}`); // navigate to the results page with the caseId parameter in the URL
   };
+  
+  
 
   return (
     <div className='scan-container' id='container'>
@@ -77,7 +78,7 @@ const ScanPage = () => {
       {/* conditional rendering based on the state variables */}
       {result && (
         <div className='result-container'>
-          <button onClick={handleShowResults}>Show Results</button>
+          <button onClick={handleShowResults(result.case_id)}>Show Results</button>
         </div>
       )}
     </div>

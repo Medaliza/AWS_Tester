@@ -1,11 +1,11 @@
 from django.http import JsonResponse
-from ...models import Policy
+from ...models import Results
 from celery import shared_task
 
 
 @shared_task
 def get_history(request):
-    policies = Policy.objects.all()
+    policies = Results.objects.all()
     results = []
     for policy in policies:
         results.append({

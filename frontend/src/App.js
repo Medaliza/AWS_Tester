@@ -10,7 +10,7 @@ import HistoryPage from './pages/HistoryPage/HistoryPage';
 import Navbar from './components/NavBar';
 import Sidebar from './components/SideBar';
 import ScanPage from './pages/ScanPage/ScanPage'
-import ResultsPage from './pages/ResultsPage/ResultsPage'
+import Results from './pages/ResultsPage/ResultsPage'
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <Navbar/>
         <Sidebar/>
           <PrivateRoute component={HomePage} path="/" exact/>
-          <PrivateRoute component={ResultsPage} path="/results" exact/>
+          <PrivateRoute component={Results} path="/results/:caseId" />
           <PrivateRoute component={HistoryPage} path="/history" exact/>
           <PrivateRoute component={ScanPage} path="/scan"/>
           <Route component={LoginPage} path="/login"/>

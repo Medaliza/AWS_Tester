@@ -1,104 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './ResultsPage.css'
 
-const ResultsPage = () => {
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const prossdata = JSON.parse(searchParams.get('result'));
-    const outputDiv = document.getElementById('output');
-    for (const key in prossdata) {
-        const value = prossdata[key];
-        const div = document.createElement('div');
-        div.textContent = `${key}: ${value}`;
-        outputDiv.appendChild(div);
+const Results = () => {
+  const location = useLocation();
+  const caseId = location.pathname.split('/').pop(); // extract case_id from URL
+
+  const [results, setResults] = useState(null);
+
+  const handleResults = async () => {
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/api/results/?case_id=${caseId}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.status === 200) {
+        const data = await response.json();
+        setResults(data);
+      } else {
+        alert('Error retrieving results');
       }
-  
-    return (
-      <div className='results-container'>
-        <div id='output'></div>
-      </div>
-    );
+    } catch (error) {
+      console.log(error);
+      alert('Error retrieving results');
+    }
   };
-  
-  export default ResultsPage;
 
+  useEffect(() => {
+    handleResults();
+  }, []);
 
-//   import React, {useContext, useEffect, useState} from 'react'
-// import "./ScanPage.css"
-// import { useHistory } from 'react-router-dom'
+  return (
+    <div className='results-container'>
+      <h1>Findings Summary</h1>
+        <table className='results-table'>
+          <thead>
+            <tr>
+              <th>Service Name</th>
+              <th>Checked Items</th>
+              <th>Flagged Items</th>
+              <th>Risk Level</th>
+              <th>Resources Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(results.data.last_run.summary).map((serviceName) => (
+              <tr key={serviceName}>
+                <td style={{fontWeight: 'bold', fontFamily: 'Arial', color: 'black'}}>{serviceName}</td>
+                <td>{results.data.last_run.summary[serviceName].checked_items}</td>
+                <td>{results.data.last_run.summary[serviceName].flagged_items}</td>
+                <td>{results.data.last_run.summary[serviceName].max_level}</td>
+                <td>{results.data.last_run.summary[serviceName].resources_count}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+    </div>
+  );
+};
 
-// const ScanPage = () => {
-//     const [result, setResult] = useState(null); // create a state variable to store the result
-//     const history = useHistory();
-  
-//     let ScanUser = async (e) => {
-//       e.preventDefault();
-//       let response = await fetch('http://127.0.0.1:8000/api/scan/', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//           access_key_id: e.target.access_key_id.value,
-//           secret_access_key: e.target.secret_access_key.value,
-//           profile_name: e.target.profile_name.value,
-//         }),
-//       });
-//       let data = await response.json();
-  
-//       if (response.status === 200) {
-//         setResult(data); // set the state variable to the result
-//       } else {
-//         alert('Please Provide valid access and secret keys!');
-//       }
-//     };
-  
-//     const outputDiv = document.getElementById('output');
-  
-//     if (result) {
-//       const prossdata = JSON.parse(result);
-//       for (const key in prossdata) {
-//         const value = prossdata[key];
-//         const div = document.createElement('div');
-//         div.textContent = `${key}: ${value}`;
-//         outputDiv.appendChild(div);
-//       }
-//     }
-  
-//     return (
-//       <div className='scan-container' id='container'>
-//         <form onSubmit={ScanUser}>
-//           <h1>Scan</h1>
-//           <p>
-//             In order to scan IAM user you need to provide both Access and Secret
-//             Keys
-//           </p>
-//           <div>
-//             <input
-//               type='text'
-//               name='access_key_id'
-//               placeholder='Enter Access Key'
-//               required='True'
-//             />
-//             <input
-//               type='text'
-//               name='secret_access_key'
-//               placeholder='Enter Secret Key'
-//               required='True'
-//             />
-//             <input
-//               type='text'
-//               name='profile_name'
-//               placeholder='Enter Profile Name'
-//               required='True'
-//             />
-//           </div>
-//           <button type='submit'>Scan </button>
-//         </form>
-
-//       </div>
-//     );
-//   };
-  
-//   export default ScanPage;
+export default Results;

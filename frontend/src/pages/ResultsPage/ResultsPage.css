@@ -1,21 +1,60 @@
 .results-container {
 	background-color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	width: 768px;
+	width: 90%;
 	max-width: 100%;
 	min-height: 480px;
 	max-height: 80vh;
-	margin: 100px auto;
+	margin: 0 100px;
+  height: fit-content;
+  overflow: auto;
 }
+
+.results-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 50px;
+	margin-bottom: 50px;
+  }
+  
+.results-table th, .results-table td {
+	padding: 12px 15px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+  }
+  
+.results-table th {
+	background-color: #f2f2f2;
+	font-weight: bold;
+	color: #333;
+	text-transform: uppercase;
+	font-size: 14px;
+  }
+  
+.results-table td {
+	font-size: 14px;
+	color: #555;
+  }
+  
+.results-table tr:nth-child(even) {
+	background-color: #f9f9f9;
+  }
+  
+.results-table tr:hover {
+	background-color: #FFE700;
+  }
+  
+.results-container h1 {
+	  text-align: center;
+	  margin-top: 20px;
+	  margin-bottom: 40px;
+	}
+  
 
 .results-container p {
     font-family: 'Montserrat', sans-serif;

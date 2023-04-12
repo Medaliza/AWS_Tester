@@ -6,11 +6,11 @@ from ..scan_modules.list_policies import *
 from ..scan_modules.scout import scout_func
 from ..scan_modules.cloudsplaining import *
 from ..scan_modules.check_priv import *
-from base.models import Policy
+from base.models import Results
 import random
 from django.db.utils import IntegrityError
-from celery import group
 from celery.result import AsyncResult
+from django.http import JsonResponse
 
 @api_view(['POST'])
 def AWS_account_details(request):
@@ -46,7 +46,7 @@ def AWS_account_details(request):
     else:
         print("This User doesn't have iam:GetAccountAuthorizationDetails privileges ...")
     # Save the file path to the database
-    policy = Policy(cloud_path=cloud_res,scout_path=scout_result, AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID, profile_name=profile_name, case_id=case_id)
-    policy.save()
-    return Response('okey')
+    result = Results(cloud_path=cloud_res,scout_path=scout_result, AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID, profile_name=profile_name, case_id=case_id)
+    result.save()
+    return JsonResponse({'case_id': case_id})
     

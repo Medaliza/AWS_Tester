@@ -15,6 +15,32 @@
   overflow: auto;
 }
 
+.details-container {
+	background-color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 90%;
+	max-width: 100%;
+	min-height: 480px;
+	max-height: 80vh;
+	margin: 0 100px;
+  height: fit-content;
+  overflow: auto;
+  margin-top: 40px;
+}
+.details-container h2 {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	font-family:  'Montserrat', sans-serif;
+	font-weight: bold;
+  }
+
+
 .results-table {
 	width: 100%;
 	border-collapse: collapse;
@@ -47,6 +73,7 @@
   
 .results-table tr:hover {
 	background-color: #FFE700;
+	cursor: pointer;
   }
   
 .results-container h1 {

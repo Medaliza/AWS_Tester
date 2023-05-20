@@ -43,9 +43,9 @@ const ScanPage = () => {
   return (
     <div className='scan-container' id='container'>
       <form onSubmit={handleScanUser}>
-        <h1>Scan</h1>
+        <h1>Scan AWS Account</h1>
         <p>
-          In order to scan IAM user you need to provide both Access and Secret
+          In order to scan AWS user profile you need to provide both Access and Secret
           Keys
         </p>
         <div>

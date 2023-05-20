@@ -22,5 +22,4 @@ def get_results(request):
         cloud_result = json.load(f)
 
     scout_result['services']['iam'] = cloud_result
-
     return JsonResponse({'data': scout_result})

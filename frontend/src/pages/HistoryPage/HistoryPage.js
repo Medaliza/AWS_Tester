@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HistoryPage.css';
+import { useHistory} from "react-router-dom";
 
 const HistoryPage = () => {
   const [historyData, setHistoryData] = useState(null);
@@ -18,13 +19,17 @@ const HistoryPage = () => {
     fetchHistoryData();
   }, []);
 
+  const history = useHistory();
+  const handleRowClick = (Case_ID) => {
+    history.push(`/results/${Case_ID}`);
+  }  
   const renderTableData = () => {
     if (historyData) {
       return historyData.map((historyItem, index) => {
         const { Access_Key_ID, Profile_Name, Scan_Date, Case_ID } = historyItem;
         const formattedDate = new Date(Scan_Date).toLocaleString();
         return (
-          <tr key={index}>
+          <tr onClick={()=> handleRowClick(Case_ID)} key={index}>
             <td>{Case_ID}</td>
             <td>{Access_Key_ID}</td>
             <td>{Profile_Name}</td>
@@ -38,7 +43,7 @@ const HistoryPage = () => {
 
   return (
     <div className='history-container'>
-      <h1>History Page</h1>
+      <h1>Scan History</h1>
       <table className='history-table'>
         <thead>
           <tr>

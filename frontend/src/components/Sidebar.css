@@ -8,6 +8,17 @@
     overflow: unset;
     height: 100vh;
   }
+
+  .icon {
+    font-size: 1.5rem;
+    color: #696969; /* Change color to grey */
+  }
+  .menu-item {
+    font-weight: bold; /* Remove bold from words */
+    font-size: 0.9rem; /* Increase font size of words */
+    color: #696969;
+  }
+  
   #header .brand-name {
     font-family: 'Montserrat', sans-serif;
     font-size: large;

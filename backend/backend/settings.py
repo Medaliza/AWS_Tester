@@ -126,8 +126,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'api',
-        'USER': 'admin',
-        'PASSWORD': '123456',
+        'USER': 'root',
+        'PASSWORD': 'mutillidae',
         'HOST': 'localhost',
         'PORT': '3306',
     }
